@@ -5,8 +5,8 @@
   pre_tasks:
   - name: Update and Upgrade
     yum:
-      update_cache: yes
-      upgrade: 'yes'
+      name: '*'
+      state: latest
 
   tasks:
     - name: Base applications installation
@@ -15,9 +15,7 @@
       vars:
         packages:
         - nc
-        - java-1.8.0-openjdk
         - telnet
-        - docker
     
     - name: Adding jenkins.repo
       get_url:
@@ -40,32 +38,8 @@
         state: started
         enabled: true
 
-    - name: Systemctl enable Docker 
-      systemd:
-        name: docker
-        state: started
-        enabled: true
-
-    - name: Adding the "ec2-user" to the docker group
-      user:
-        name: ec2-user
-        groups: docker
-        append: yes
-
-    - name: Systemctl restart docker
-      systemd:
-        state: restarted
-        daemon_reload: yes
-        name: docker
-
-    - name: Docker-Compose instalation
-      get_url:
-        url: https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Linux-x86_64
-        dest: /usr/local/bin/docker-compose
-        mode: 0755
-
-    - name: 30 seconds Sleep
-      wait_for: timeout=30
+    - name: 10 seconds Sleep
+      wait_for: timeout=10
 
     - name: Catching "initialAdminPassword"
       shell: cat /var/lib/jenkins/secrets/initialAdminPassword
