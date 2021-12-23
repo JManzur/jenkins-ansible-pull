@@ -16,6 +16,7 @@
         packages:
         - nc
         - telnet
+        - java-1.8.0-openjdk
     
     - name: Adding jenkins.repo
       get_url:
