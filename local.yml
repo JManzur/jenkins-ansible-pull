@@ -17,6 +17,7 @@
         - nc
         - telnet
         - java-1.8.0-openjdk
+        - epel
     
     - name: Adding jenkins.repo
       get_url:
