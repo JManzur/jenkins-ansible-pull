@@ -45,8 +45,8 @@
         state: started
         enabled: true
 
-    - name: 10 seconds Sleep
-      wait_for: timeout=10
+    - name: 30 seconds Sleep
+      wait_for: timeout=30
 
     - name: Catching "initialAdminPassword"
       shell: cat /var/lib/jenkins/secrets/initialAdminPassword

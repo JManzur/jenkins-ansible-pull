@@ -17,12 +17,14 @@
 ### Using EC2 "User Data" (cloud-init):
 
 ```bash
+  # Jenkins instalation with Ansible Pull
   user_data = <<EOF
   #!/bin/bash
   yum update -y
-  yum install ansible -y
+  yum install git
+  amazon-linux-extras install ansible2
   sleep 10
-  ansible-pull -U https://github.com/JManzur/jenkins-ansible-pull.git
+  ansible-pull -U https://github.com/JManzur/bastion-ansible-pull.git
   EOF
 ```
 #### Manual Installation:

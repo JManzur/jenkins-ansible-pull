@@ -41,11 +41,11 @@ if [[ $EUID -ne 0 ]]
         exit 1
     else
         echo -e "${GREEN}Updating and Upgrading${ENDCOLOR} \n"
-        apt-get update && sudo apt-get upgrade -y
+        yum update -y
         echo -e "${GREEN}Installing Git${ENDCOLOR} \n"
-        apt install git -y
+        yum install git -y
         echo -e "${GREEN}Installing Ansible${ENDCOLOR} \n"
-        apt install ansible -y
+        sudo amazon-linux-extras install ansible2 -y
         progress_bar
         check_if_installed "git"
         check_if_installed "ansible"
