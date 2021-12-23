@@ -4,7 +4,7 @@
   become: true
   pre_tasks:
   - name: Update and Upgrade
-    apt:
+    yum:
       update_cache: yes
       upgrade: 'yes'
 
