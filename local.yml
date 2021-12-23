@@ -9,6 +9,12 @@
       state: latest
 
   tasks:
+    - name: Install Extra Packages for Enterprise Linux (EPEL)
+      command: amazon-linux-extras install epel -y
+
+    - name: Enable EPEL
+      command: yum-config-manager --enable epel
+  
     - name: Base applications installation
       yum:
         name: "{{ packages }}"
@@ -17,7 +23,6 @@
         - nc
         - telnet
         - java-1.8.0-openjdk
-        - epel
     
     - name: Adding jenkins.repo
       get_url:
