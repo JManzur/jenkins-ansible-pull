@@ -1,18 +1,12 @@
-# Jenkins implementation using Ansible Pulltle
-<div align="center">
- <img src="https://1.bp.blogspot.com/-b7YyMHGBZ08/YYFHdXDqH_I/AAAAAAAAFuY/TFO2pYNrCeEkfFVtI8WVDl2LHrpxlz-BwCLcBGAsYHQ/s16000/under_const.jpg"</img>
-</div>
+# Jenkins implementation using Ansible-Pull
 
-## Resources deployed by this manifest:
+**ansible-pull** is a part of Ansible that allows you to download a configuration playbook from a Git repository and immediately apply it on the machine running the ansible-pull command.
 
 ## Tested with: 
 
 | Environment | Application | Version  |
 | ----------------- |-----------|---------|
-| WSL2 Ubuntu 20.04 | Terraform | v1.0.0  |
-
-## Deployment How-To:
-
+| Ubuntu 20.04.3 LTS | Terraform | v 2.9.6  |
 
 ### Using EC2 "User Data" (cloud-init):
 
@@ -27,23 +21,28 @@
   ansible-pull -U https://github.com/JManzur/bastion-ansible-pull.git
   EOF
 ```
+
 #### Manual Installation:
 
+Download the bootstrap script:
 ```bash
 wget https://raw.githubusercontent.com/JManzur/jenkins-ansible-pull/main/bootstrap.sh
-chmod +x bootstrap.sh
-./bootstrap.sh
-ansible-pull -U https://github.com/JManzur/jenkins-ansible-pull.git
 ```
 
-## Debugging / Troubleshooting:
+Make it executable:
+```bash
+chmod +x bootstrap.sh
+```
 
-#### **Debugging Tip #1**: 
+Run it:
+```bash
+./bootstrap.sh
+```
 
-#### **Known issue #1**: 
- - **Issue**: 
-- **Cause**: 
-- **Solution**: 
+Pull:
+```bash
+ansible-pull -U https://github.com/JManzur/jenkins-ansible-pull.git
+```
 
 ## Author:
 
@@ -51,4 +50,5 @@ ansible-pull -U https://github.com/JManzur/jenkins-ansible-pull.git
 
 ## Documentation:
 
-- [EXAMPLE](URL)
+- [Jenkins Official Site](https://www.jenkins.io/)
+- [Jenkins Handbook](https://www.jenkins.io/doc/book/)
