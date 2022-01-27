@@ -50,3 +50,4 @@ ansible-pull -U https://github.com/JManzur/jenkins-ansible-pull.git
 
 - [Jenkins Official Site](https://www.jenkins.io/)
 - [Jenkins Handbook](https://www.jenkins.io/doc/book/)
+- [Ansible-Pull Documentation](https://docs.ansible.com/ansible/latest/cli/ansible-pull.html)
