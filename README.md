@@ -4,9 +4,7 @@
 
 ## Tested with: 
 
-| Environment | Application | Version  |
-| ----------------- |-----------|---------|
-| Ubuntu 20.04.3 LTS | Terraform | v 2.9.6  |
+> ⚠️ This ansible-pull playbook works only on [Amazon Linux 2](https://aws.amazon.com/amazon-linux-2/?amazon-linux-whats-new.sort-by=item.additionalFields.postDateTime&amazon-linux-whats-new.sort-order=desc) based instances.
 
 ### Using EC2 "User Data" (cloud-init):
 
