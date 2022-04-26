@@ -16,7 +16,7 @@
   yum install git
   amazon-linux-extras install ansible2
   sleep 10
-  ansible-pull -U https://github.com/JManzur/bastion-ansible-pull.git
+  ansible-pull -U https://github.com/JManzur/jenkins-ansible-pull.git
   EOF
 ```
 
